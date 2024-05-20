@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-struct ForceCenterModifier: ViewModifier {
+public struct ForceCenterModifier: ViewModifier {
     public func body(content: Content) -> some View {
         VStack {
             Spacer()
@@ -15,7 +15,7 @@ struct ForceCenterModifier: ViewModifier {
     }
 }
 
-struct ForceHCenterModifier: ViewModifier {
+public struct ForceHCenterModifier: ViewModifier {
     public func body(content: Content) -> some View {
         HStack {
             Spacer()
@@ -25,7 +25,7 @@ struct ForceHCenterModifier: ViewModifier {
     }
 }
 
-struct ForceVCenterModifier: ViewModifier {
+public struct ForceVCenterModifier: ViewModifier {
     public func body(content: Content) -> some View {
         VStack {
             Spacer()
@@ -35,18 +35,18 @@ struct ForceVCenterModifier: ViewModifier {
     }
 }
 
-extension View {
-    public func forceCenter() -> some View {
+public extension View {
+    func forceCenter() -> some View {
         self
             .modifier(ForceCenterModifier())
     }
     
-    public func forceHCenter() -> some View {
+    func forceHCenter() -> some View {
         self
             .modifier(ForceHCenterModifier())
     }
     
-    public func forceVCenter() -> some View {
+    func forceVCenter() -> some View {
         self
             .modifier(ForceVCenterModifier())
     }
